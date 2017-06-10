@@ -2,6 +2,10 @@ p() { cd ~/Documents/Projects/$1; }
 _p() { _files -W ~/Documents/Projects -/; }
 compdef _p p
 
+a() { cd ~/Documents/Projects/lighthousex/ace-engine/$1; }
+_a() { _files -W ~/Documents/Projects/lighthousex/ace-engine -/; }
+compdef _a a
+
 # o() { cd ~/Documents/Projects/OpenSourceProjects/$1; }
 # _o() { _files -W ~/Documents/Projects/OpenSourceProjects -/; }
 # compdef _o o
@@ -28,3 +32,9 @@ function _h {
 
 compdef _h h
 
+gcam() {
+  git add .; git commit -a -m "$*";
+}
+gcamp() {
+  git add .; git commit -a -m "$*"; git push;
+}
